@@ -63,7 +63,6 @@ const ProductTable = (props) => {
           onChange={handleChange}
         />
       </caption>
-
       <thead>
         <tr>
           <th>
@@ -114,7 +113,7 @@ const ProductTable = (props) => {
         {/* To Search support in sorting */}
         {items
           .filter((itemt) => {
-            return itemt.title.toLowerCase().includes(searchTerm)
+            return itemt.category.toLowerCase().includes(searchTerm)
           })
           .map((item) => (
             <tr key={item.id}>

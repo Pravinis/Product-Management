@@ -7,6 +7,7 @@ import Header from './Header'
 import SearchTable from './SearchTable'
 import TaskModalview from './Modalview'
 import HelpModal from './HelpModal'
+import PDFList from './PDFList'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <SearchTable />
           <TaskModalview />
           <TaskModal />
+          <PDFList />
         </div>
       </div>
     </TaskListContextProvider>
