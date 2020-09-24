@@ -102,8 +102,6 @@ const Taskview = () => {
         onChange={handlePrice}
         required
       ></input>{' '}
-      <br />
-      <br />
       <label> Product Name </label>{' '}
       <input
         type="text"
