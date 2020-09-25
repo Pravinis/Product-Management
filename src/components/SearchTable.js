@@ -95,7 +95,7 @@ const ProductTable = (props) => {
           <th>
             <button
               type="button"
-              onClick={() => requestSort('price')}
+              //onClick={() => requestSort('price')}
               className="task-table-column"
             >
               Product Price
