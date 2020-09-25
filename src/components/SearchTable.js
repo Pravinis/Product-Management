@@ -57,7 +57,7 @@ const ProductTable = (props) => {
       <caption>
         <input
           type="text"
-          placeholder="Search Id,category,price,name........"
+          placeholder="Search By Category........"
           className="task-search"
           value={searchTerm}
           onChange={handleChange}
@@ -72,6 +72,15 @@ const ProductTable = (props) => {
               className="task-table-column"
             >
               ProductId
+            </button>
+          </th>
+          <th>
+            <button
+              type="button"
+              onClick={() => requestSort('pname')}
+              className="task-table-column"
+            >
+              Product Name
             </button>
           </th>
           <th>
@@ -93,15 +102,6 @@ const ProductTable = (props) => {
             </button>
           </th>
           <th>
-            <button
-              type="button"
-              onClick={() => requestSort('pname')}
-              className="task-table-column"
-            >
-              Product Name
-            </button>
-          </th>
-          <th>
             <button type="button" className="task-table-column">
               Action
             </button>
@@ -118,9 +118,9 @@ const ProductTable = (props) => {
           .map((item) => (
             <tr key={item.id}>
               <td>{item.title}</td>
+              <td>{item.pname}</td>
               <td>{item.category}</td>
               <td>{item.price}</td>
-              <td>{item.pname}</td>
               <td>
                 <button
                   onClick={() => {
