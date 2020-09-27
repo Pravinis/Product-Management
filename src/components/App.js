@@ -20,7 +20,7 @@ const App = () => {
           <SearchTable />
           <TaskModalview />
           <TaskModal />
-
+          <ContactForm />
           {/* <PDFList /> */}
         </div>
       </div>
