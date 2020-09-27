@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import '../App.css'
 import throttle from 'lodash/throttle'
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css'
@@ -25,12 +26,15 @@ export default function PDFList({ data, onDocumentLoadSuccess, pageNumber }) {
     <div
       id="row"
       style={{
-        height: '100vh',
+        height: '5vh',
         display: 'flex',
       }}
     >
-      <div id="placeholderWrapper" style={{ height: '100vh' }} />
-      <div id="pdfWrapper" style={{ width: '90vw' }} ref={pdfWrapper}>
+      <button type="button" className="task-table-column" onClick={pdfWrapper}>
+        Generate Pdf
+      </button>
+      <div id="placeholderWrapper" style={{ height: '5vh' }} />
+      <div id="pdfWrapper" style={{ width: '9vw' }} ref={pdfWrapper}>
         <Document
           file={data}
           onLoadSuccess={onDocumentLoadSuccess}

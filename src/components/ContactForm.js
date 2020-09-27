@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import * as emailjs from 'emailjs-com'
-//import Layout from '..To-do-App-Task-Management/node_modules/layout'
+import Layout from '../components/layout'
 import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap'
 class ContactForm extends Component {
   state = {
