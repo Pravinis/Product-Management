@@ -8,7 +8,8 @@ import SearchTable from './SearchTable'
 import TaskModalview from './Modalview'
 import HelpModal from './HelpModal'
 //import PDFList from './PDFList'
-import ContactForm from './ContactForm'
+// import ContactForm from './ContactForm'
+import Mail from './Mail'
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
           <SearchTable />
           <TaskModalview />
           <TaskModal />
-          <ContactForm />
+          <Mail />
+          {/* <ContactForm /> */}
           {/* <PDFList /> */}
         </div>
       </div>

@@ -18,9 +18,9 @@
 .app-wrapper {
     background-color: rgb(75, 158, 150);
     width: 50%;
-    min-width: 450px;
-    height: 600px;
-    padding: 30px;
+    min-width: 850px;
+    height: 800px;
+    padding: 25px;
     box-sizing: border-box;
     border-radius: 5px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
