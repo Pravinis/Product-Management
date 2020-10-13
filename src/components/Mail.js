@@ -7,8 +7,8 @@ import Layout from './layout'
 import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap'
 //class ContactForm extends Component {
 const ContactForm = (props) => {
-  const {viewItem,setviewItem} = useContext(TaskListContext);
-  const items = props.products;
+  const { viewItem, setviewItem } = useContext(TaskListContext)
+  const items = props.products
   //console.log(items[0].pname + " " + props.products[0].pname)
   // state = {
   //   name: '',
@@ -17,15 +17,15 @@ const ContactForm = (props) => {
   //   message: '',
   // }
   const { name, email, subject, message } = React.useState('')
-  const mailhtml = props.string;
+  const mailhtml = props.string
   const handleSubmit = (e) => {
     e.preventDefault()
-    
+
     let templateParams = {
       from_name: email,
       to_name: '<YOUR_EMAIL>',
       subject: subject,
-      message_html: '<h1>hello<h2>',
+      message_html: props.string,
     }
     emailjs.send(
       'Gmaiil',
@@ -45,12 +45,12 @@ const ContactForm = (props) => {
   // }
   const handleChange = (param, e) => {
     this.setState({ [param]: e.target.value })
-   }
-//  render() {
-    return (
-      <>
-        <Layout>
-          {/* <h1 className="p-heading1">Get in Touch</h1>
+  }
+  //  render() {
+  return (
+    <>
+      <Layout>
+        {/* <h1 className="p-heading1">Get in Touch</h1>
           <Form onSubmit={this.handleSubmit.bind(this)}>
             <FormGroup controlId="formBasicEmail">
               <Label className="text-muted">Email address</Label>
@@ -95,25 +95,25 @@ const ContactForm = (props) => {
                 onChange={this.handleChange.bind(this, 'message')}
               />
             </FormGroup> */}
-            <form onSubmit={handleSubmit} className="form">
-      <label> List: </label>{' '}
-      <input
-        type="textarea"
-        placeholder="Product Id..."
-        value={props.string}
-        //onChange={handleSubmit}
-        //required
-        className="task-primary"
-      ></input>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-            </form>
-          {/* </Form> */}
-        </Layout>
-      </>
-    )
-  }
+        <form onSubmit={handleSubmit} className="form">
+          <label> List: </label>{' '}
+          <input
+            type="textarea"
+            placeholder="Product Id..."
+            value={props.string}
+            //onChange={handleSubmit}
+            //required
+            className="task-primary"
+          ></input>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </form>
+        {/* </Form> */}
+      </Layout>
+    </>
+  )
+}
 //}
 
 export default function Mail() {
@@ -128,23 +128,29 @@ export default function Mail() {
 
   const items = []
 
-  var string = "Product-ID |Barcode |PName |Category |Price ";
- 
+  var string = 'Product-ID |Barcode |PName |Category |Price '
+
   for (const [index, value] of task_data.entries()) {
     items.push(task_data[index].props.task)
-    string = string +" "+ items[index].title +" | "+ items[index].barcode +" | "+ items[index].pname +" | "+
-     items[index].pname +items[index].category 
-    +" | "+ items[index].price 
-  }; 
-  console.log("string" + string)
- 
+    string =
+      string +
+      ' ' +
+      items[index].title +
+      ' | ' +
+      items[index].barcode +
+      ' | ' +
+      items[index].pname +
+      ' | ' +
+      items[index].pname +
+      items[index].category +
+      ' | ' +
+      items[index].price
+  }
+  console.log('string' + string)
 
   return (
     <div className="App">
-      <ContactForm
-        products={items}
-        string={string}
-      />
+      <ContactForm products={items} string={string} />
     </div>
   )
 }
